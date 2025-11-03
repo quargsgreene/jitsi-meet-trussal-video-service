@@ -1,7 +1,7 @@
+/// <reference path="../../../../globals.d.ts" />
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// @ts-expect-error
 import VideoLayout from '../../../../modules/UI/videolayout/VideoLayout';
 import { IReduxState, IStore } from '../../app/types';
 import { isDisplayNameVisible } from '../../base/config/functions.web';
@@ -23,6 +23,7 @@ import Whiteboard from '../../whiteboard/components/web/Whiteboard';
 import { isWhiteboardEnabled } from '../../whiteboard/functions';
 import { setSeeWhatIsBeingShared } from '../actions.web';
 import { getLargeVideoParticipant } from '../functions';
+import StrudelEditor from './web/StrudelEditor';
 
 import ScreenSharePlaceholder from './ScreenSharePlaceholder.web';
 
@@ -218,6 +219,7 @@ class LargeVideo extends Component<IProps> {
                 ref = { this._containerRef }
                 style = { style }>
                 <SharedVideo />
+                <StrudelEditor />
                 {_whiteboardEnabled && <Whiteboard />}
                 <div id = 'etherpad' />
 

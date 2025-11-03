@@ -3,7 +3,6 @@ import React, { useCallback, useState } from 'react';
 import { WithTranslation } from 'react-i18next';
 import { connect as reactReduxConnect, useDispatch, useSelector, useStore } from 'react-redux';
 
-// @ts-expect-error
 import VideoLayout from '../../../../../modules/UI/videolayout/VideoLayout';
 import { IReduxState, IStore } from '../../../app/types';
 import { getConferenceNameForTitle } from '../../../base/conference/functions';

@@ -1,6 +1,5 @@
 import React from 'react';
 
-// @ts-expect-error
 import VideoLayout from '../../../modules/UI/videolayout/VideoLayout';
 import { IReduxState, IStore } from '../app/types';
 import { IJitsiConference } from '../base/conference/reducer';

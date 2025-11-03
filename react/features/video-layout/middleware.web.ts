@@ -1,4 +1,3 @@
-// @ts-expect-error
 import VideoLayout from '../../../modules/UI/videolayout/VideoLayout.js';
 import { CONFERENCE_WILL_INIT, CONFERENCE_WILL_LEAVE } from '../base/conference/actionTypes';
 import { MEDIA_TYPE } from '../base/media/constants';
@@ -56,7 +55,9 @@ MiddlewareRegistry.register(store => next => action => {
         if (action.track.jitsiTrack.isLocal()) {
             const participant = getLocalParticipant(store.getState);
 
-            VideoLayout._updateLargeVideoIfDisplayed(participant?.id);
+            if (participant?.id) {
+                VideoLayout._updateLargeVideoIfDisplayed(participant.id);
+            }
         }
         break;
     }

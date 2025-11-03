@@ -1,4 +1,3 @@
-// @ts-expect-error
 import VideoLayout from '../../../modules/UI/videolayout/VideoLayout';
 import StateListenerRegistry from '../base/redux/StateListenerRegistry';
 import { getVideoTrackByParticipant } from '../base/tracks/functions.web';
