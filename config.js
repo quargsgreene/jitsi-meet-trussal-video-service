@@ -30,28 +30,28 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'jitsi-meet.example.com',
+        domain: 'video.trussal.com',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'jitsi-meet.example.com',
+        // authdomain: 'video.trussal.com',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-meet.example.com',
+        // focus: 'focus.video.trussal.com',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.' + subdomain + 'jitsi-meet.example.com',
+        muc: 'conference.' + subdomain + 'video.trussal.com',
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: 'https://jitsi-meet.example.com/' + subdir + 'http-bind',
+    bosh: 'https://video.trussal.com/' + subdir + 'http-bind',
 
     // Websocket URL (XMPP)
-    websocket: 'wss://jitsi-meet.example.com/' + subdir + 'xmpp-websocket',
+    websocket: 'wss://video.trussal.com/' + subdir + 'xmpp-websocket',
 
-    // websocketKeepAliveUrl: 'https://jitsi-meet.example.com/' + subdir + '_unlock',
+    // websocketKeepAliveUrl: 'https://video.trussal.com/' + subdir + '_unlock',
 
     // Whether BOSH should be preferred over WebSocket if both are configured.
     // preferBosh: false,
@@ -59,11 +59,11 @@ var config = {
     // The real JID of focus participant - can be overridden here
     // Do not change username - FIXME: Make focus username configurable
     // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.jitsi-meet.example.com',
+    // focusUserJid: 'focus@auth.video.trussal.com',
 
     // Option to send conference requests to jicofo over http (requires nginx rule for it)
     // conferenceRequestUrl:
-    //   'https://<!--# echo var="http_host" default="jitsi-meet.example.com" -->/' + subdir + 'conference-request/v1',
+    //   'https://<!--# echo var="http_host" default="video.trussal.com" -->/' + subdir + 'conference-request/v1',
 
     // Options related to the bridge (colibri) data channel
     bridgeChannel: {
@@ -200,14 +200,14 @@ var config = {
 
     // Start the conference in audio only mode (no video is being received nor
     // sent).
-    // startAudioOnly: false,
+    //startAudioOnly: true,
 
     // Every participant after the Nth will start audio muted.
     // startAudioMuted: 10,
 
     // Start calls with audio muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
-    // startWithAudioMuted: false,
+    startWithAudioMuted: true,
 
     // Enabling it (with #params) will disable local audio output of remote
     // participants and to enable it back a reload is needed.
@@ -358,7 +358,7 @@ var config = {
 
     // Start calls with video muted. Unlike the option above, this one is only
     // applied locally. FIXME: having these 2 options is confusing.
-    // startWithVideoMuted: false,
+     startWithVideoMuted: false,
 
     // Desktop sharing
 
@@ -390,9 +390,9 @@ var config = {
     //     appKey: '<APP_KEY>', // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://jitsi-meet.example.com/static/oauth.html'
+    //     // 'https://video.trussal.com/static/oauth.html'
     //     redirectURI:
-    //          'https://jitsi-meet.example.com/subfolder/static/oauth.html',
+    //          'https://video.trussal.com/subfolder/static/oauth.html',
     // },
 
     // configuration for all things recording related. Existing settings will be migrated here in the future.
@@ -1020,7 +1020,7 @@ var config = {
 
     // List of pre meeting screens buttons to hide. The values must be one or more of the 5 allowed buttons:
     // 'microphone', 'camera', 'select-background', 'invite', 'settings'
-    // hiddenPremeetingButtons: [],
+    hiddenPremeetingButtons: ['microphone', 'camera'],
 
     // An array with custom option buttons for the participant context menu
     // type:  Array<{ icon: string; id: string; text: string; }>
@@ -1119,7 +1119,7 @@ var config = {
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:jitsi-meet.example.com:3478' },
+            // { urls: 'stun:video.trussal.com:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' },
         ],
     },
@@ -1495,7 +1495,7 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.jitsi-meet.example.com',
+    // moderatedRoomServiceUrl: 'https://moderated.video.trussal.com',
 
     // If true, tile view will not be enabled automatically when the participants count threshold is reached.
     // disableTileView: true,

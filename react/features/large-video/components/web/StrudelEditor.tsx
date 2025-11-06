@@ -21,7 +21,7 @@ class StrudelEditor extends Component<Record<string, never>, IState> {
         this.portalRoot.setAttribute('id', 'strudel-editor-portal');
     }
 
-    componentWillUnmount() {
+   override componentWillUnmount() {
         document.body.removeChild(this.portalRoot);
     }
 
@@ -108,7 +108,7 @@ class StrudelEditor extends Component<Record<string, never>, IState> {
     /**
      * Loads the Strudel script and initializes the editor.
      */
-    componentDidMount() {
+   override componentDidMount() {
         try {
             document.body.appendChild(this.portalRoot);
             // Ensure we're in a browser environment
@@ -169,7 +169,7 @@ class StrudelEditor extends Component<Record<string, never>, IState> {
      *
      * @returns {ReactElement}
      */
-    render() {
+    override render() {
         return (            
         <iframe
             src="https://strudel.cc/?xwWRfuCE8TAR"
